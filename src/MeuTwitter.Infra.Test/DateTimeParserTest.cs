@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using NUnit.Framework;
 
 namespace MeuTwitter.Infra.Test
@@ -21,12 +22,31 @@ namespace MeuTwitter.Infra.Test
         public void Infra_OneMinute_Test()
         {
             //Arrenge
+            var createdDate = DateTime.Now.AddMinutes(-1);
 
             //Action
+            string result = DateTimeParser.TryParce(createdDate);
             Debug.WriteLine("Passou no TEST");
 
-            //Assert
 
+            //Assert
+            Assert.AreEqual("1 minuto atrás", result);
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void Infra_TwoMinute_Test()
+        {
+            //Arrenge
+            var createdDate = DateTime.Now.AddMinutes(-1);
+
+            //Action
+            string result = DateTimeParser.TryParce(createdDate);
+            Debug.WriteLine("Passou no TEST");
+
+
+            //Assert
+            Assert.AreEqual("2 minuto atrás", result);
             Assert.IsTrue(true);
         }
 

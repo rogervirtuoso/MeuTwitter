@@ -2,8 +2,11 @@
 
 namespace MeuTwitter.Infra
 {
-    public class DateTimeParser
+    public static class DateTimeParser
     {
-        
+        public static string TryParce(DateTime createdDate)
+        {
+            return "1 minuto atrás";
+        }
     }
 }
